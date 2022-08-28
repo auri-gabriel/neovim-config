@@ -8,3 +8,4 @@ Plug 'dense-analysis/ale'
 call plug#end()
 
 let g:ale_linters = {'rust': ['analyzer']}
+let g:ale_completion_enabled = 1
