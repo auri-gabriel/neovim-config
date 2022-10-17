@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'dense-analysis/ale' 
 Plug 'ellisonleao/gruvbox.nvim'
+Plug 'andweeb/presence.nvim'
 
 call plug#end()
 let g:ale_completion_enabled = 1
