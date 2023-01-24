@@ -1,1 +1,3 @@
-{"rust-analyzer.server.path": "/home/YOURNAME/.local/bin/rust-analyzer"}
+{
+    "rust-analyzer.server.path": "/home/aurigabrielcastrodemelo/.local/bin/rust-analyzer"
+}
