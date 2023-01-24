@@ -10,6 +10,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'itchyny/lightline.vim'
 Plug 'dense-analysis/ale' 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'andweeb/presence.nvim'
 
