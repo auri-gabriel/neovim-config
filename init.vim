@@ -8,10 +8,17 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Bottom bar
 Plug 'itchyny/lightline.vim'
+" Sidebar
 Plug 'dense-analysis/ale' 
+" autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" colour theme
 Plug 'ellisonleao/gruvbox.nvim'
+" follow system colourscheme
+Plug 'vimpostor/vim-lumen'
+" discord rich presence
 Plug 'andweeb/presence.nvim'
 
 call plug#end()
