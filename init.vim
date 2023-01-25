@@ -1,4 +1,5 @@
 set number
+set autoindent expandtab tabstop=4 shiftwidth=4
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
