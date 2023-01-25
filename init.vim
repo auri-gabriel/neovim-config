@@ -11,14 +11,20 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Bottom bar
 Plug 'itchyny/lightline.vim'
+
 " Sidebar
 Plug 'dense-analysis/ale' 
+
 " autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " colour theme
-Plug 'ellisonleao/gruvbox.nvim'
+Plug 'folke/tokyonight.nvim'
+"Plug 'ellisonleao/gruvbox.nvim'
+
 " follow system colourscheme
 Plug 'vimpostor/vim-lumen'
+
 " discord rich presence
 Plug 'andweeb/presence.nvim'
 
@@ -26,7 +32,8 @@ call plug#end()
 let g:ale_completion_enabled = 1
 
 set background=dark " or light if you want light mode
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme tokyonight-night
 
 let g:ale_linters = {'rust': ['analyzer']}
 
