@@ -20,7 +20,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " colour theme
 Plug 'folke/tokyonight.nvim'
-"Plug 'ellisonleao/gruvbox.nvim'
+Plug 'ellisonleao/gruvbox.nvim'
 
 " follow system colourscheme
 Plug 'vimpostor/vim-lumen'
@@ -32,8 +32,8 @@ call plug#end()
 let g:ale_completion_enabled = 1
 
 set background=dark " or light if you want light mode
-"colorscheme gruvbox
-colorscheme tokyonight-night
+colorscheme gruvbox
+"colorscheme tokyonight-night
 
 let g:ale_linters = {'rust': ['analyzer']}
 
