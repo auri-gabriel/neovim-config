@@ -1,4 +1,13 @@
 set number
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
+
+
 set autoindent expandtab tabstop=4 shiftwidth=4
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -17,6 +26,10 @@ Plug 'dense-analysis/ale'
 
 " autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" file tree view
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-tree.lua'
 
 " colour theme
 Plug 'folke/tokyonight.nvim'
@@ -48,7 +61,7 @@ set nowritebackup
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 " delays and poor user experience
 set updatetime=300
-
+                
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
 set signcolumn=yes
