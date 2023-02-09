@@ -62,7 +62,7 @@ colorscheme gruvbox
 let g:ale_linters = {'rust': ['analyzer']}
 
   let g:lightline = {
-	\ 'colorscheme': 'wombat',
+	\ 'colorscheme': 'jellybeans',
 	\ 'active': {
 	\   'left': [ [ 'mode', 'paste' ],
 	\             [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ] ]
