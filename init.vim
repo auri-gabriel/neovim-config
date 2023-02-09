@@ -1,12 +1,20 @@
-set number
+" Unicode Characters:
+" Tab: {»·, ↹}
+" NewLine: {↩, ↲}
+set listchars=tab:»·,trail:·,eol:↩,space:·
 
+noremap <F5> :set list!<CR>
+inoremap <F5> <C-o>:set list!<CR>
+cnoremap <F5> <C-c>:set list!<CR>
+
+
+" configure line number
+set number
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
-
-
 
 set autoindent expandtab tabstop=4 shiftwidth=4
 
@@ -31,6 +39,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
 
+" git integrations
+Plug 'tpope/vim-fugitive'
+
 " colour theme
 Plug 'folke/tokyonight.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
@@ -50,7 +61,17 @@ colorscheme gruvbox
 
 let g:ale_linters = {'rust': ['analyzer']}
 
-
+  let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	\ },
+	\ 'component_function': {
+	\   'cocstatus': 'coc#status',
+    \   'gitbranch': 'FugitiveHead'
+	\ },
+	\ }
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence
 set encoding=utf-8
@@ -61,7 +82,7 @@ set nowritebackup
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 " delays and poor user experience
 set updatetime=300
-                
+
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
 set signcolumn=yes
@@ -192,7 +213,7 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " Add (Neo)Vim's native statusline support
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics
