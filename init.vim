@@ -36,8 +36,8 @@ Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " file tree view
-Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
-Plug 'nvim-tree/nvim-tree.lua'
+"Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+"Plug 'nvim-tree/nvim-tree.lua'
 
 " git integrations
 Plug 'tpope/vim-fugitive'
@@ -73,36 +73,36 @@ let g:ale_linters = {'rust': ['analyzer']}
 	\ },
 	\ }
 
-  lua <<EOF
-  -- disable netrw at the very start of your init.lua (strongly advised)
-  vim.g.loaded_netrw = 1
-  vim.g.loaded_netrwPlugin = 1
-
-  -- set termguicolors to enable highlight groups
-  vim.opt.termguicolors = true
-
-  -- empty setup using defaults
-  require("nvim-tree").setup()
-
-  -- OR setup with some options
-  require("nvim-tree").setup({
-    sort_by = "case_sensitive",
-    view = {
-      width = 30,
-      mappings = {
-        list = {
-          { key = "u", action = "dir_up" },
-        },
-      },
-    },
-    renderer = {
-      group_empty = true,
-    },
-    filters = {
-      dotfiles = true,
-    },
-  })
-EOF
+"  lua <<EOF
+"  -- disable netrw at the very start of your init.lua (strongly advised)
+"  vim.g.loaded_netrw = 1
+"  vim.g.loaded_netrwPlugin = 1
+"
+"  -- set termguicolors to enable highlight groups
+"  vim.opt.termguicolors = true
+"
+"  -- empty setup using defaults
+"  require("nvim-tree").setup()
+"
+"  -- OR setup with some options
+"  require("nvim-tree").setup({
+"    sort_by = "case_sensitive",
+"    view = {
+"      width = 30,
+"      mappings = {
+"        list = {
+"          { key = "u", action = "dir_up" },
+"        },
+"      },
+"    },
+"    renderer = {
+"      group_empty = true,
+"    },
+"    filters = {
+"      dotfiles = true,
+"    },
+"  })
+"EOF
 
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence
